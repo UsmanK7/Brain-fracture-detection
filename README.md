@@ -29,7 +29,7 @@ Each image belongs to a folder representing a specific patient, with 1–3 image
 Our approach consists of a **two-stage classification pipeline**:
 
 1. **Bone Type Classification**
-   A **ResNet50 model** is trained to predict whether the X-ray image shows an elbow, hand, or shoulder.
+   A **AlexNet-50 model** is trained to predict whether the X-ray image shows an elbow, hand, or shoulder.
 
 2. **Fracture Detection (per bone type)**
    Depending on the predicted bone type, a corresponding model (ResNet-based) is used to detect if a fracture is present.
@@ -44,10 +44,6 @@ Our approach consists of a **two-stage classification pipeline**:
 This two-step system significantly improves performance by tailoring fracture detection models to specific bone types.
 
 ---
-
-
-
-![img_1.png](images/Architecture.png)
 
 
 ## Results
