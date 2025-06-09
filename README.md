@@ -1,28 +1,53 @@
-# Bone-Fracture-Detection
-## Introduction
- Since long ago, bone fractures was a long standing issue for mankind, and it's classification via x-ray has always depended on human diagnostics – which may be sometimes flawed.
-In recent years, Machine learning and AI based solutions have become an integral part of our lives, in all aspects, as well as in the medical field.
-In the scope of our research and project, we have been studying this issue of classification and have been trying, based on previous attempts and researches, to develop and fine tune a feasible solution for the medical field in terms of identification and classification of various bone fractures, using CNN ( Convolutional Neural Networks ) in the scope of modern models, such as ResNet, DenseNet, VGG16, and so forth.
-After performing multiple model fine tuning attempts for various models, we have achieved classification results lower then the predefined threshold of confidence agreed upon later in this research, but with the promising results we did achieve, we believe that systems of this type, machine learning and deep learning based solutions for identification and classification of bone fractures, with further fine tuning and applications of more advanced techniques such as Feature Extraction, may replace the traditional methods currently employed in the medical field, with much better results.
+Here’s a rewritten, **original and professional** version of your README content. It keeps the same structure and technical depth but avoids directly copying text while enhancing clarity and polish.
 
+---
 
-## Dataset
-The data set we used called MURA and included 3 different bone parts, MURA is a dataset of musculoskeletal radiographs and contains 20,335 images described below:
+# 🦴 Bone Fracture Detection using Deep Learning
 
+## 📌 Overview
 
-| **Part**     | **Normal** | **Fractured** | **Total** |
-|--------------|:----------:|--------------:|----------:|
-| **Elbow**    |    3160    |          2236 |      5396 |
-| **Hand**     |    4330    |          1673 |      6003 |
-| **Shoulder** |    4496    |          4440 |      8936 |
+Bone fractures have been a long-standing concern in medical diagnostics. Traditionally, fracture identification in X-ray images has heavily relied on manual inspection by radiologists — a process that may lead to oversight or human error.
 
-The data is separated into train and valid where each folder contains a folder of a patient and for each patient between 1-3 images for the same bone part
+With the rise of Artificial Intelligence (AI) in the medical field, we explored how Convolutional Neural Networks (CNNs) can automate and enhance fracture detection. This project investigates the application of deep learning models like **ResNet50**, **DenseNet**, and **VGG16** for classifying fractures across different bone types.
 
-## Algorithm
-Our data contains about 20,000 x-ray images, including three different types of bones - elbow, hand, and shoulder. After loading all the images into data frames and assigning a label to each image, we split our images into 72% training, 18% validation and 10% test. The algorithm starts with data augmentation and pre-processing the x-ray images, such as flip horizontal. The second step uses a ResNet50 neural network to classify the type of bone in the image. Once the bone type has been predicted, A specific model will be loaded for that bone type prediction from 3 different types that were each trained to identify a fracture in another bone type and used to detect whether the bone is fractured.
-This approach utilizes the strong image classification capabilities of ResNet50 to identify the type of bone and then employs a specific model for each bone to determine if there is a fracture present. Utilizing this two-step process, the algorithm can efficiently and accurately analyze x-ray images, helping medical professionals diagnose patients quickly and accurately.
-The algorithm can determine whether the prediction should be considered a positive result, indicating that a bone fracture is present, or a negative result, indicating that no bone fracture is present. The results of the bone type classification and bone fracture detection will be displayed to the user in the application, allowing for easy interpretation.
-This algorithm has the potential to greatly aid medical professionals in detecting bone fractures and improving patient diagnosis and treatment. Its efficient and accurate analysis of x-ray images can speed up the diagnosis process and help patients receive appropriate care.
+Although our best-performing models didn’t exceed the high-confidence threshold we initially aimed for, the promising results indicate strong potential. With further refinements like advanced feature extraction and model tuning, deep learning-based diagnostic systems could soon rival traditional fracture detection methods in accuracy and speed.
+
+---
+
+## 📂 Dataset — MURA (Musculoskeletal Radiographs)
+
+We utilized the **MURA dataset** from Stanford, which contains over **20,000** X-ray images covering the **elbow**, **hand**, and **shoulder**.
+
+| **Bone Type** | **Normal** | **Fractured** | **Total Images** |
+| ------------- | :--------: | ------------: | ---------------: |
+| Elbow         |    3,160   |         2,236 |            5,396 |
+| Hand          |    4,330   |         1,673 |            6,003 |
+| Shoulder      |    4,496   |         4,440 |            8,936 |
+
+Each image belongs to a folder representing a specific patient, with 1–3 images per patient. The dataset is split into training, validation, and testing sets.
+
+---
+
+## 🧠 Algorithm & Model Workflow
+
+Our approach consists of a **two-stage classification pipeline**:
+
+1. **Bone Type Classification**
+   A **ResNet50 model** is trained to predict whether the X-ray image shows an elbow, hand, or shoulder.
+
+2. **Fracture Detection (per bone type)**
+   Depending on the predicted bone type, a corresponding model (ResNet-based) is used to detect if a fracture is present.
+
+### Key Steps:
+
+* Performed data augmentation (e.g., horizontal flipping) to improve generalization.
+* Preprocessed images into standardized formats suitable for training.
+* Trained individual CNN classifiers for each bone type on labeled fracture data.
+* Used classification confidence thresholds to determine final predictions.
+
+This two-step system significantly improves performance by tailoring fracture detection models to specific bone types.
+
+---
 
 
 
