@@ -55,9 +55,6 @@ This two-step system significantly improves performance by tailoring fracture de
 
 
 ## Results
-### Body Part Prediction
-
-<img src="plots/BodyPartAcc.png" width=300> <img src="plots/BodyPartLoss.png" width=300>
 
 ### Fracture Prediction
 #### Elbow
@@ -70,25 +67,6 @@ This two-step system significantly improves performance by tailoring fracture de
 #### Shoulder
 <img src="plots/FractureDetection/Shoulder/_Accuracy.jpeg" width=300> <img src="plots/FractureDetection/Shoulder/_Loss.jpeg" width=300>
 
-
-# Installations
-### PyCharm IDE
-### Python v3.7.x
-### Install requirements.txt
-
-* customtkinter~=5.0.3
-* PyAutoGUI~=0.9.53
-* PyGetWindow~=0.0.9
-* Pillow~=8.4.0
-* numpy~=1.19.5
-* tensorflow~=2.6.2
-* keras~=2.6.0
-* pandas~=1.1.5
-* matplotlib~=3.3.4
-* scikit-learn~=0.24.2
-* colorama~=0.4.5
-
-Run mainGUI.Py
 
 # GUI
 ### Main
