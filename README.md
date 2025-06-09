@@ -1,7 +1,3 @@
-Here’s a rewritten, **original and professional** version of your README content. It keeps the same structure and technical depth but avoids directly copying text while enhancing clarity and polish.
-
----
-
 # 🦴 Bone Fracture Detection using Deep Learning
 
 ## 📌 Overview
